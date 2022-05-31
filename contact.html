@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <title>Contact</title>
+    <link rel="icon" href="./img/nav-bar.png" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="banner">
+        <a href="./index.html">
+          <img
+            class="banner-image"
+            src="./img/nav-bar.jpg"
+            alt="company logo"
+          />
+        </a>
+
+        <h1 class="banner-title">RJT Contracting Inc.</h1>
+        <!-- <nav> -->
+        <ul id="banner-nav" data-visible="false">
+                      <div class="language-container">
+            <div class="display-language-container">
+              <li class="banner-nav-list-lang active-lang"><a href="#">English</a></li>
+                <p class="lang-down-arrow"><i id="language-down-arrow" class="fa-solid fa-angle-down"></i></p>
+            </div>
+            <li class="banner-nav-list-lang" id="other-lang" data-visible="false"><a href="./contact-spa.html">Spanish</a></li>
+          </div>
+          <li class="banner-nav-list"><a href="./index.html">Home</a></li>
+          <li class="spacer">|</li>
+          <li class="banner-nav-list">
+            <a href="./about.html">About Us</a>
+          </li>
+          <li class="spacer">|</li>
+          <li class="banner-nav-list-home">
+            <a href="./contact.html">Contact</a>
+          </li>
+          <li class="spacer">|</li>
+          <li class="banner-nav-list"><a href="./jobs.html">Jobs</a></li>
+        </ul>
+        <!-- </nav> -->
+      </div>
+    </header>
+
+    <button
+      aria-controls="banner-nav"
+      aria-expanded="false"
+      class="banner-nav-toggle fa-solid fa-bars"
+    ></button>
+
+    <main>
+      <div class="hiring">
+        <p class="hiring-title">Now Hiring for the 2022 Season!</p>
+        <button class="hiring-button">
+          <a href="./jobs.html">Apply Now</a>
+        </button>
+      </div>
+
+      <div class="contact-us">
+        <h2 class="contact-title">Contact Us</h2>
+        <div class="contact-image"></div>
+        <div class="contact-info">
+          <p class="contact-phone">Phone: <span>503-551-1999</span></p>
+          <p class="contact-fax">Fax: <span>503-400-1609</span></p>
+          <p class="contact-email">Email: <span>asierra010@gmail.com</span></p>
+        </div>
+        <div class="contact-base-container">
+          <p class="contact-base-title">BASE OF OPERATIONS:</p>
+          <p class="contact-address">4240 Paintbrush Ct NE, Salem, OR 97305</p>
+        </div>
+ <div id="contact-hours-container">
+          <p class="contact-hours-title">HOURS OF OPERATION:</p>
+          <div id="display-contact-hours">
+            <div id="hours-container" data-visible="false"></div>
+            <div class="arrow-container">
+              <i
+                id="contact-down-arrow"
+                data-visible="false"
+                class="fa-solid fa-angle-down"
+              ></i>
+            </div>
+          </div>
+        </div>
+        <div class="form-container">
+          <form class="form" action="./php/contact.php" method="post">
+            <div class="form-info form-first-name">
+              <label for="first-name">First Name:</label>
+              <input
+                class="input-first"
+                type="text"
+                id="first-name"
+                name="first-name"
+                placeholder="First Name"
+                required
+              />
+            </div>
+            <div class="form-info form-middle-name">
+              <label for="middle-name">Middle Name:</label>
+              <input
+                class="input-middle"
+                type="text"
+                id="middle-name"
+                name="middle-name"
+                placeholder="Middle Name"
+              />
+            </div>
+            <div class="form-info form-last-name">
+              <label for="last-name">Last Name:</label>
+              <input
+                class="input-last"
+                type="text"
+                id="last-name"
+                name="last-name"
+                placeholder="Last Name"
+                required
+              />
+            </div>
+            <div class="form-info form-phone">
+              <label for="phone-number">Phone Number:</label>
+              <input
+                class="input-phone"
+                type="text"
+                id="phone-number"
+                name="phone-number"
+                placeholder="Ex: 123-456-7890"
+                required
+              />
+            </div>
+            <div class="form-info form-email">
+              <label for="email">Email:</label>
+              <input
+                class="input-email"
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Email"
+                
+              />
+            </div>
+            <div class="form-info form-message">
+              <label for="message">Message:</label>
+              <textarea
+                class="input-message"
+                cols="30"
+                rows="10"
+                id="message"
+                name="message"
+              ></textarea>
+            </div>
+            <input class="form-submit" type="submit" name="contact-form-english"/>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-container">
+        <p class="footer-title">Follow us!</p>
+        <ul class="footer-social-list">
+          <li class="footer-social-list">
+            <a href="https://twitter.com/" target="_blank">
+              <p class="social-icons"><i class="fa-brands fa-twitter-square"></i></p>
+            </a>
+          </li>
+          <li class="footer-social-list footer-social-list-middle">
+            <a href="https://www.facebook.com/" target="_blank">
+              <p class="social-icons"><i class="fa-brands fa-facebook-square"></i></p>
+            </a>
+          </li>
+          <li class="footer-social-list">
+            <a href="https://www.instagram.com/?hl=en" target="_blank">
+              <p class="social-icons"><i class="fa-brands fa-instagram-square"></i></p>
+            </a>
+          </li>
+        </ul>
+        <ul id="footer-nav">
+          <li class="footer-nav-list"><a href="./index.html">Home</a></li>
+          <li class="footer-spacer">|</li>
+          <li class="footer-nav-list"><a href="./about.html">About Us</a></li>
+          <li class="footer-spacer">|</li>
+          <li class="footer-nav-list-home">
+            <a href="./contact.html">Contact</a>
+          </li>
+          <li class="footer-spacer">|</li>
+          <li class="footer-nav-list"><a href="./jobs.html">Jobs</a></li>
+        </ul>
+        <div class="footer-company-location">
+          <p class="footer-adress">4240 Paintbrush Ct NE</p>
+          <p class="footer-location">Salem, OR 97305</p>
+          <p class="footer-phone">503-551-1999</p>
+        </div>
+        <p class="footer-copyright">
+          Copyright © 2022 RJT Contracting - All Rights Reserved. Site Created
+          by Adrian Sierra.
+        </p>
+      </div>
+    </footer>
+
+    <script src="./js/contact.js"></script>
+  </body>
+</html>
