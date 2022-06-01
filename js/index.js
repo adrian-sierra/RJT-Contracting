@@ -1,8 +1,10 @@
-const navigation = document.querySelector("#banner-nav");
+const navigation = document.querySelector("#banner-nav"); // set up for DOM manipulation for nav bar and navigation
 const navigationButton = document.querySelector(".banner-nav-toggle");
 
 navigationButton.addEventListener("click", () => {
+  // event listener for the navigation bar when the window is in a phone sized screen
   if (navigation.getAttribute("data-visible") === "false") {
+    // this if statements and the code inside will alter based off its current condition and the result is the side bar will expand out to the screen or slide out of the screen
     navigation.setAttribute("data-visible", "true");
     navigationButton.setAttribute("aria-expanded", "true");
     navigationButton.classList.remove("fa-bars");
@@ -15,10 +17,11 @@ navigationButton.addEventListener("click", () => {
   }
 });
 
-const langDownArrow = document.getElementById("language-down-arrow");
+const langDownArrow = document.getElementById("language-down-arrow"); // set up for DOM manipulation for the selected language
 const otherLangContainer = document.getElementById("other-lang");
 
 langDownArrow.addEventListener("click", () => {
+  // another event listenener for the language selector button and the conditions are then set accordingly
   if (otherLangContainer.getAttribute("data-visible") === "false") {
     otherLangContainer.setAttribute("data-visible", "true");
     langDownArrow.classList.remove("fa-angle-down");
@@ -30,7 +33,7 @@ langDownArrow.addEventListener("click", () => {
   }
 });
 
-const eventOneButton = document.getElementById("event-1-button");
+const eventOneButton = document.getElementById("event-1-button"); // this portion of the file deals with the attendance forms from the home page and deals with checking and setting the appropriate attributes for each of the elements with the appropriate DOM manipulation for each of the four forms
 const eventOneForm = document.getElementById("event-1-form");
 const eventOne = document.getElementById("event-1");
 const eventOneCancel = document.getElementById("event-1-cancel");
@@ -55,6 +58,7 @@ const eventFourCancel = document.getElementById("event-4-cancel");
 const eventFourContainer = document.getElementById("event-container-4");
 
 eventOneButton.addEventListener("click", () => {
+  // event listeners for displaying an attendance form and setting appropriate attributes for some styling
   if (eventOneForm.getAttribute("data-visible") === "false") {
     eventOneForm.setAttribute("data-visible", "true");
     eventOneButton.setAttribute("data-visible", "false");
@@ -88,6 +92,7 @@ eventFourButton.addEventListener("click", () => {
 });
 
 eventOneCancel.addEventListener("click", () => {
+  // event listener to cancel attendance form and reset it as well
   eventOneForm.setAttribute("data-visible", "false");
   eventOneButton.setAttribute("data-visible", "true");
   eventOne.setAttribute("data-visible", "true");
