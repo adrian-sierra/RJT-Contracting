@@ -1,8 +1,10 @@
-const navigation = document.querySelector("#banner-nav");
+const navigation = document.querySelector("#banner-nav"); // set up for DOM manipulation for nav bar and navigation
 const navigationButton = document.querySelector(".banner-nav-toggle");
 
 navigationButton.addEventListener("click", () => {
+  // event listener for the navigation bar when the window is in a phone sized screen
   if (navigation.getAttribute("data-visible") === "false") {
+    // this if statements and the code inside will alter based off its current condition and the result is the side bar will expand out to the screen or slide out of the screen
     navigation.setAttribute("data-visible", "true");
     navigationButton.setAttribute("aria-expanded", "true");
     navigationButton.classList.remove("fa-bars");
@@ -15,10 +17,11 @@ navigationButton.addEventListener("click", () => {
   }
 });
 
-const langDownArrow = document.getElementById("language-down-arrow");
+const langDownArrow = document.getElementById("language-down-arrow"); // set up for DOM manipulation for the selected language
 const otherLangContainer = document.getElementById("other-lang");
 
 langDownArrow.addEventListener("click", () => {
+  // another event listenener for the language selector button and the conditions are then set accordingly
   if (otherLangContainer.getAttribute("data-visible") === "false") {
     otherLangContainer.setAttribute("data-visible", "true");
     langDownArrow.classList.remove("fa-angle-down");
