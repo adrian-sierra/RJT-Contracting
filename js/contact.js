@@ -33,7 +33,7 @@ langDownArrow.addEventListener("click", () => {
   }
 });
 
-const weekDays = {
+const weekDays = { // key-value pair template to store the days of the week with their appropriate times
   0: { day: "Sunday", time: "9am-3pm" },
   1: { day: "Monday", time: "8am-5pm" },
   2: { day: "Tuesday", time: "8am-5pm" },
@@ -43,14 +43,14 @@ const weekDays = {
   6: { day: "Saturday", time: "9am-3pm" },
 };
 
-let date = new Date();
-let todaysDate = weekDays[date.getDay()].day;
-let format, paragraph, text;
-let weekDaysSize = Object.keys(weekDays).length;
+let date = new Date(); // create new instance of the date object to keep track of which day of the week it is and to display the corresponding time
+let todaysDate = weekDays[date.getDay()].day; // get the corresponding weekday based off of the getDay method for the date object
+let format, paragraph, text; 
+let weekDaysSize = Object.keys(weekDays).length; // calculate the key size for the date object in order to loop through each one and then display them onto the screen
 
-for (let i = 0; i < weekDaysSize; i++) {
+for (let i = 0; i < weekDaysSize; i++) { // this for loop will loop through each of the days from the weekdays key-pair object and format them accordingly
   format = weekDays[i].day + ": " + weekDays[i].time;
-  paragraph = document.createElement("p");
+  paragraph = document.createElement("p"); // JS involves creating a new paragraph element and then appending this child to an hours container
   paragraph.setAttribute("id", "contact-hours");
   text = document.createTextNode(format);
   paragraph.appendChild(text);
@@ -60,11 +60,11 @@ for (let i = 0; i < weekDaysSize; i++) {
   }
 }
 
-const downArrowButton = document.getElementById("contact-down-arrow");
+const downArrowButton = document.getElementById("contact-down-arrow"); // set up for DOM manipulation on a display for the contact hours
 const contactHours = document.getElementById("hours-container");
 
-downArrowButton.addEventListener("click", () => {
-  if (contactHours.getAttribute("data-visible") === "false") {
+downArrowButton.addEventListener("click", () => { // event listener for the display contact hours button
+  if (contactHours.getAttribute("data-visible") === "false") { // using the class list attributes for the HTML elements to switch back and forth based on current setting 
     contactHours.setAttribute("data-visible", "true");
     downArrowButton.setAttribute("data-visible", "true");
     downArrowButton.classList.remove("fa-angle-down");
@@ -72,7 +72,7 @@ downArrowButton.addEventListener("click", () => {
     document
       .getElementById("hours-container")
       .removeChild(document.getElementById("contact-hours"));
-    for (let i = 0; i < weekDaysSize; i++) {
+    for (let i = 0; i < weekDaysSize; i++) { // this is the same as the for loop above with the exception being that the current day will have an added style of an underline and different color
       format = weekDays[i].day + ": " + weekDays[i].time;
       paragraph = document.createElement("p");
       paragraph.setAttribute("id", "contact-hours");
@@ -85,7 +85,7 @@ downArrowButton.addEventListener("click", () => {
       document.getElementById("hours-container").appendChild(paragraph);
     }
   } else {
-    contactHours.setAttribute("data-visible", "false");
+    contactHours.setAttribute("data-visible", "false"); // same as the the above just for the opposite condition
     downArrowButton.setAttribute("data-visible", "false");
     downArrowButton.classList.remove("fa-angle-up");
     downArrowButton.classList.add("fa-angle-down");
